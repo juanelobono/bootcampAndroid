@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Bootcamp</string>
+    <string name="login_activity">Iniciar Sesion</string>
+    <string name="btn_login_ingresar">Ingresar</string>
+    <string name="edt_correo_electronico">Correo electrónico</string>
+    <string name="edt_nombre">Nombre</string>
+    <string name="edt_apellido">Apellido</string>
+    <string name="edt_contrasenia">Contraseña</string>
+    <string name="edt_repita_contrasenia">Reingrese la contraseña</string>
+    <string name="edt_login_sincuenta">¿No tiene cuenta? Registrese</string>
+    <string name="txtv_login_registro"> <u>aquí</u></string>
+    <string name="btn_registro_registrarse">Registrarse</string>
+    <string name="registro_activity">Registro</string>
+    <string name="eventos_activity">Eventos</string>
+    <string name="cursos_activity">Cursos</string>
+    <string name="title_activity_splash">SplashActivity</string>
+</resources>
