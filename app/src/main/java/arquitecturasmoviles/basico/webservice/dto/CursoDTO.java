@@ -19,7 +19,7 @@ public class CursoDTO {
     protected String nombre;
 
     @SerializedName("dia_hora")
-    private Date fecha;
+    private String fecha;
 
     @SerializedName("descripcion")
     private String descripcion;
@@ -34,7 +34,7 @@ public class CursoDTO {
     private long eventoId;
 
 
-    public CursoDTO(long id, String nombre, Date fecha, String descripcion, short duracion, String disertante) {
+    public CursoDTO(long id, String nombre, String fecha, String descripcion, short duracion, String disertante) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
@@ -86,11 +86,11 @@ public class CursoDTO {
         this.disertante = disertante;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

@@ -62,7 +62,7 @@ public class Evento implements Serializable {
     }
 
     public String getFechaInicio(){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(inicio);
     }
 
@@ -71,7 +71,7 @@ public class Evento implements Serializable {
     }
 
     public String getFechaFin(){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(fin);
     }
 

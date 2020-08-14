@@ -38,7 +38,7 @@ public class CursoDAO extends DBHelper{
     public static final String CREAR = "CREATE TABLE " + TABLA + " ("
             + ID + " INTEGER PRIMARY KEY NOT NULL, "
             + NOMBRE + " TEXT, "
-            + FECHA + " INTEGER, "
+            + FECHA + " TEXT, "
             + DESCRIPCION + " TEXT, "
             + DURACION + " INTEGER, "
             + DISERTANTE + " TEXT, "
@@ -74,7 +74,7 @@ public class CursoDAO extends DBHelper{
         ContentValues contentValues = new ContentValues();
         contentValues.put(ID, curso.getId());
         contentValues.put(NOMBRE, curso.getNombre());
-        contentValues.put(FECHA, curso.getFechaMS());
+        contentValues.put(FECHA, curso.getFecha());
         contentValues.put(DESCRIPCION, curso.getDescripcion());
         contentValues.put(DURACION, curso.getDuracion());
         contentValues.put(DISERTANTE, curso.getDisertante());
@@ -99,7 +99,7 @@ public class CursoDAO extends DBHelper{
                 Curso curso = new Curso();
                 curso.setId(cursor.getLong(ID_INDEX));
                 curso.setNombre(cursor.getString(NOMBRE_INDEX));
-                curso.setFecha(new Date(cursor.getLong(FECHA_INDEX)));
+                curso.setFecha(cursor.getString(FECHA_INDEX));
                 curso.setDescripcion(cursor.getString(DESCRIPCION_INDEX));
                 curso.setDuracion(cursor.getShort(DURACION_INDEX));
                 curso.setDisertante(cursor.getString(DISERTANTE_INDEX));
@@ -127,7 +127,7 @@ public class CursoDAO extends DBHelper{
                 Curso curso = new Curso();
                 curso.setId(cursor.getLong(ID_INDEX));
                 curso.setNombre(cursor.getString(NOMBRE_INDEX));
-                curso.setFecha(new Date(cursor.getLong(FECHA_INDEX)));
+                curso.setFecha(cursor.getString(FECHA_INDEX));
                 curso.setDescripcion(cursor.getString(DESCRIPCION_INDEX));
                 curso.setDuracion(cursor.getShort(DURACION_INDEX));
                 curso.setDisertante(cursor.getString(DISERTANTE_INDEX));

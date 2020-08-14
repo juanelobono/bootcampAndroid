@@ -1,12 +1,14 @@
 package arquitecturasmoviles.basico.model;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class Curso {
     protected long id;
     protected String nombre;
-    private Date fecha;
+    private String fecha;
     private String descripcion;
     private short duracion;
     private String disertante;
@@ -29,11 +31,11 @@ public class Curso {
         this.nombre = nombre;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -85,17 +87,26 @@ public class Curso {
         this.asistir = asistir;
     }
 
-    public String getDia(String patron) {
-        SimpleDateFormat sdf = new SimpleDateFormat(patron);
-        return sdf.format(fecha);
+    public Date getDate() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        return sdf.parse(fecha);
     }
 
-    public String getHora(String patron) {
-        SimpleDateFormat sdf = new SimpleDateFormat(patron);
-        return sdf.format(fecha);
+    public String getDia() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM");
+        try {
+            return sdf.format(getDate());
+        } catch (ParseException e) {
+            return "-";
+        }
     }
 
-    public long getFechaMS(){
-        return fecha.getTime();
+    public String getHora() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        try {
+            return sdf.format(getDate());
+        } catch (ParseException e) {
+            return "-";
+        }
     }
 }

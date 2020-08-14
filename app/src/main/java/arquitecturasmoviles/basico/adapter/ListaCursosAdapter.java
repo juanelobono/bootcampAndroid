@@ -64,7 +64,7 @@ public class ListaCursosAdapter extends BaseAdapter{
 
         Curso curso = (Curso) getItem(indice);
         viewHolder.nombreCurso.setText(curso.getNombre());
-        String fechaCurso = String.format("Fecha: %s  %s", curso.getDia("dd/MM"), curso.getHora("HH:mm"));
+        String fechaCurso = String.format("Fecha: %s  %s", curso.getDia(), curso.getHora());
         viewHolder.fechaCurso.setText(fechaCurso);
         String duracionCurso = String.format("Duración %d min", curso.getDuracion());
         viewHolder.duracionCurso.setText(duracionCurso);

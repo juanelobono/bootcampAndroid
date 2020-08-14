@@ -40,7 +40,7 @@ public class CursosActivity extends AppCompatActivity {
         evento = (Evento) bundle.get("evento");
 
         cursos = new ArrayList<>();
-        cursoDAO = new CursoDAO(getApplicationContext());
+        cursoDAO = new CursoDAO(this);
 
         cursos = cursoDAO.obtenerPorEvento(evento.getId());
 
@@ -64,8 +64,8 @@ public class CursosActivity extends AppCompatActivity {
         lstCursos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                CursoDTO cursoDTO = (CursoDTO) listaCursosAdapter.getItem(i);
-                Toast.makeText(getApplicationContext(), cursoDTO.getNombre(),Toast.LENGTH_LONG).show();
+                Curso curso = (Curso) listaCursosAdapter.getItem(i);
+                Toast.makeText(getApplicationContext(), curso.getNombre(),Toast.LENGTH_LONG).show();
             }
         });
 

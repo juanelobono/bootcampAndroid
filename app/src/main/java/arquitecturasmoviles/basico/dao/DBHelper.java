@@ -13,7 +13,7 @@ import java.io.OutputStream;
 public class DBHelper extends  SQLiteOpenHelper {
 
     public static final String DB_NAME = "basico.db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
     private static String DB_PATH = "/data/data/arquitecturasmoviles.basico/databases/";
     private SQLiteDatabase mDataBase;
     private final Context mContext;
